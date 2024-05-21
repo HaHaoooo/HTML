@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Block Preview</title>
+    <link rel="stylesheet" href="resources/block.css">
+</head>
+<body>
+    <div id="sidebar" class="sidebar">
+        <label for="modid">Mod ID:</label>
+        <input type="text" id="modid" class="modid-input">
+
+        <label for="cube-name">Cube Name:</label>
+        <input type="text" id="cube-name" class="cube-name-input">
+
+        <label for="north">Front:</label>
+        <input type="file" id="north" class="file-input" accept="image/*">
+        <label for="south">Back:</label>
+        <input type="file" id="south" class="file-input" accept="image/*">
+        <label for="east">Left:</label>
+        <input type="file" id="east" class="file-input" accept="image/*">
+        <label for="west">Right:</label>
+        <input type="file" id="west" class="file-input" accept="image/*">
+        <label for="up">Top:</label>
+        <input type="file" id="up" class="file-input" accept="image/*">
+        <label for="down">Bottom:</label>
+        <input type="file" id="down" class="file-input" accept="image/*">
+
+        <button id="submit-btn">Generate</button>
+    </div>
+    <div id="cube-container">
+        <div class="face north"></div>
+        <div class="face south"></div>
+        <div class="face east"></div>
+        <div class="face west"></div>
+        <div class="face up"></div>
+        <div class="face down"></div>
+    </div>
+
+    <script src="resources/block.js"></script>
+</body>
+</html>
