@@ -31,6 +31,9 @@ body, html {
     height: 200px;
     border: 1px solid #ddd;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
 }
 
 /* faces */

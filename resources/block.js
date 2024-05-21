@@ -13,11 +13,16 @@ let deltaY = 0;
 let rotationX = 0;
 let rotationY = 0;
 let scale = 1;
+let velocityX = 0;
+let velocityY = 0;
+let inertiaAnimationFrame;
 
 function handleMouseDown(event) {
     isDragging = true;
     previousX = event.clientX;
     previousY = event.clientY;
+    cube.style.transition = 'none';
+    cancelAnimationFrame(inertiaAnimationFrame);
 }
 
 function handleMouseMove(event) {
@@ -26,17 +31,21 @@ function handleMouseMove(event) {
     currentY = event.clientY;
     deltaX = currentX - previousX;
     deltaY = currentY - previousY;
-    rotationX -= deltaY * 0.5;
-    rotationY += deltaX * 0.5;
-    cube.style.transition = 'none';
+    rotationX -= deltaY * 0.25;
+    rotationY += deltaX * 0.25;
     cube.style.transform = `scale(${scale}) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
     previousX = currentX;
     previousY = currentY;
+
+    // 更新速度
+    velocityX = deltaX;
+    velocityY = deltaY;
 }
 
 function handleMouseUp() {
     isDragging = false;
-    cube.style.transition = 'transform 0.25s ease';
+    cube.style.transition = 'transform 0.5s ease';
+    applyInertia();
 }
 
 function handleMouseWheel(event) {
@@ -46,6 +55,7 @@ function handleMouseWheel(event) {
     } else {
         scale *= 1.1;
     }
+    cube.style.transition = 'transform 0.5s ease';
     cube.style.transform = `scale(${scale}) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
 }
 
@@ -57,6 +67,10 @@ function handleFileInputChange(event) {
             const textureUrl = e.target.result;
             const face = document.querySelector(`.${event.target.id}`);
             face.style.backgroundImage = `url(${textureUrl})`;
+            face.style.backgroundSize = 'cover';
+            face.style.backgroundRepeat = 'no-repeat';
+            face.style.backgroundPosition = 'center';
+            face.style.imageRendering = 'pixelated';
         }
         reader.readAsDataURL(file);
     }
@@ -86,6 +100,24 @@ function generateJSON() {
     link.href = URL.createObjectURL(blob);
     link.download = `${cubeName}.json`;
     link.click();
+}
+
+function applyInertia() {
+    const friction = 0.9;
+    const minVelocity = 1;
+    function animate() {
+        velocityX *= friction;
+        velocityY *= friction;
+
+        rotationX -= velocityY * 0.6;
+        rotationY += velocityX * 0.6;
+        cube.style.transform = `scale(${scale}) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+
+        if (Math.abs(velocityX) > minVelocity || Math.abs(velocityY) > minVelocity) {
+            inertiaAnimationFrame = requestAnimationFrame(animate);
+        }
+    }
+    inertiaAnimationFrame = requestAnimationFrame(animate);
 }
 
 cube.addEventListener('mousedown', handleMouseDown);
