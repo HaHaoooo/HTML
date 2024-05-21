@@ -1,0 +1,80 @@
+@keyframes LogIn {
+    0% {
+        width: 20%;
+    }
+    100% {
+        width: 70%;
+    }
+}
+.calculator {
+    width: 70%;
+    margin: 200px auto 0;
+    border: 2px solid dimgrey;
+    border-radius: 10px;
+    animation: LogIn 1s forwards ease-in-out;
+}
+
+.area {
+    width: 100%;
+    height: 100px;
+    background-color: #3d3a3a;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+}
+
+.area h2 {
+    color: white;
+    margin: 0;
+}
+
+.numbers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+}
+
+.number-button {
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: cornflowerblue;
+}
+
+.operator-button {
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #4CAF50;
+}
+
+.button{
+    opacity: 80%;
+}
+.button:hover {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.button:focus {
+    outline-color: #ccc;
+    outline-offset: 8px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 80%;
+        border-radius: 0;
+        border-width: 0;
+    }
+    100% {
+        opacity: 100%;
+        border-radius: 10px;
+        border-width: 1px;
+    }
+}
