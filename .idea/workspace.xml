@@ -7,14 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f65721ba-cbdc-4843-9f38-433ed99b16ae" name="更改" comment="5/21">
-      <change afterPath="$PROJECT_DIR$/.idea/html.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gongfa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/node_modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f65721ba-cbdc-4843-9f38-433ed99b16ae" name="更改" comment="5/21" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +86,7 @@
       <workItem from="1716496617831" duration="567000" />
       <workItem from="1716786082225" duration="2092000" />
       <workItem from="1716946111437" duration="437000" />
-      <workItem from="1719034017298" duration="3835000" />
+      <workItem from="1719034017298" duration="4178000" />
     </task>
     <task id="LOCAL-00001" summary="5/21">
       <option name="closed" value="true" />
@@ -143,15 +136,22 @@
       <option name="project" value="LOCAL" />
       <updated>1716325559639</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="5/21">
+      <created>1719038372269</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719038372269</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="5/21" />
     <MESSAGE value="5/21 change src" />
-    <option name="LAST_COMMIT_MESSAGE" value="5/21 change src" />
+    <MESSAGE value="5/21" />
+    <option name="LAST_COMMIT_MESSAGE" value="5/21" />
   </component>
 </project>

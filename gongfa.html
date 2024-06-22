@@ -84,10 +84,10 @@
         <h2>功法描述（诗歌词，两行为一句，例如：xxxxxxx，xxxxxxx。）</h2>
         <div id="descriptionContainer" class="description-line">
             <label>
-                <input type="text">
+                <input type="text">，
             </label>
             <label>
-                <input type="text">
+                <input type="text">。
             </label>
         </div>
         <button id="addDescriptionButton">增加一行</button>
@@ -150,11 +150,13 @@
         const newInput1 = document.createElement("input");
         newInput1.type = "text";
         newLabel1.appendChild(newInput1);
+        newLabel1.appendChild(document.createTextNode("，"));
 
         const newLabel2 = document.createElement("label");
         const newInput2 = document.createElement("input");
         newInput2.type = "text";
         newLabel2.appendChild(newInput2);
+        newLabel2.appendChild(document.createTextNode("。"));
 
         container.appendChild(newLabel1);
         container.appendChild(newLabel2);
